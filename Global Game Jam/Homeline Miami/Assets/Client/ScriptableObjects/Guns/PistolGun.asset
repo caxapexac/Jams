@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473a06f8c0135f447ba4f1d0fb8946ff, type: 3}
+  m_Name: PistolGun
+  m_EditorClassIdentifier: 
+  Name: Pistol
+  GunTime: 0
+  Texture: {fileID: 21300000, guid: d3f4c6ffa3b946c4eabf8d7c2c210cb0, type: 3}
+  DropTexture: {fileID: 21300000, guid: a3855d00da7e51c4fb2a768df78e3f83, type: 3}
+  EnemyTexture: {fileID: 21300000, guid: 72f4a0c38d5e7f1438d2586284fc9aa3, type: 3}
+  Count: 1
+  Delay: 0.2
+  Accuracy: 0.01
+  Bullet: {fileID: 11400000, guid: 8b2dc01c788874e40bde83bf44bfe70a, type: 2}

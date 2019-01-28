@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473a06f8c0135f447ba4f1d0fb8946ff, type: 3}
+  m_Name: RifleGun
+  m_EditorClassIdentifier: 
+  Name: Rifle
+  GunTime: 20
+  Texture: {fileID: 21300000, guid: 6cc8c81aa09732242bd6ce0b781b0968, type: 3}
+  DropTexture: {fileID: 21300000, guid: 609b10ef1b0444343a7be5fd2e5f88c1, type: 3}
+  EnemyTexture: {fileID: 21300000, guid: c779e6587a4a82345a04e8ed2f2d635c, type: 3}
+  Count: 1
+  Delay: 0.3
+  Accuracy: 0.001
+  Bullet: {fileID: 11400000, guid: c245c597bf0debd45b792fbce10d9ade, type: 2}

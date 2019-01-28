@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PlayerBullet
+  - Player
+  - EnemyBullet
+  - Enemy
+  - Wall
+  - Bonus
+  - Gun
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 70107335
+    locked: 0
+  - name: Furniture
+    uniqueID: 1329132697
+    locked: 0
+  - name: Foreground
+    uniqueID: 1521026045
+    locked: 0
+  - name: Gun
+    uniqueID: 1333103217
+    locked: 0

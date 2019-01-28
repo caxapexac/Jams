@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb231c7466e847c2aa907234a20386fc, type: 3}
+  m_Name: Shot bullet
+  m_EditorClassIdentifier: 
+  Texture: {fileID: 21300000, guid: 214c2f8df5693f242be8eeb2aefe46fe, type: 3}
+  Sound: {fileID: 8300000, guid: ab6abfe841922ed4eb1c115cbcc9fb6b, type: 3}
+  Size: 0.08
+  LifeTime: 0.5
+  Hp: 1
+  Damage: 30
+  Speed: 31.2

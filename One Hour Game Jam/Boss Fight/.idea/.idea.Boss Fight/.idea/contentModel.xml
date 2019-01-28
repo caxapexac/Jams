@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\caxap\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Boss Fight.1302048402.00" t="ExcludeRecursive" />
+    <e p="D:\A work\Accel_2019\Unity projects\1hgj\Boss Fight" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="BossScript.cs" t="Include" />
+          <e p="BulletScript.cs" t="Include" />
+          <e p="Diff.cs" t="Include" />
+          <e p="PlayerScript.cs" t="Include" />
+        </e>
+        <e p="ScriptsExtensions" t="Include">
+          <e p="Curves.cs" t="Include" />
+          <e p="Extensions.cs" t="Include" />
+          <e p="FpsDisplay.cs" t="Include" />
+          <e p="Hashing.cs" t="Include" />
+          <e p="ListExtensions.cs" t="Include" />
+          <e p="NumericMethods.cs" t="Include" />
+          <e p="OptimizedScrollList.cs" t="Include" />
+          <e p="PrefabPool.cs" t="Include" />
+          <e p="TransformMethods.cs" t="Include" />
+          <e p="VectorMethods.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Boss Fight.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
