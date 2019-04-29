@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27703193ce4042c44ade2b1faffdc125, type: 3}
+  m_Name: Course6
+  m_EditorClassIdentifier: 
+  Name: AFK
+  Direction: -0.27
+  Delta: 0.048
+  Chance: 0.108
+  Difficulty: 77.9
+  Delay: 0.3

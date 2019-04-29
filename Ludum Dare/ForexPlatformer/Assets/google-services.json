@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "29297940516",
+    "firebase_url": "https://currency-ludum.firebaseio.com",
+    "project_id": "currency-ludum",
+    "storage_bucket": "currency-ludum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29297940516:android:cc7617d70655f765",
+        "android_client_info": {
+          "package_name": "me.nahui.currency"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29297940516-orgkfia3b9h0oo271s0c58csnfavrqnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfdn9992Kkt0FQdnku_cYLX3__2zaDKHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29297940516-orgkfia3b9h0oo271s0c58csnfavrqnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
