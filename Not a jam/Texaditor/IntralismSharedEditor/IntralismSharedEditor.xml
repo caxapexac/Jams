@@ -1,0 +1,724 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IntralismSharedEditor</name>
+    </assembly>
+    <members>
+        <member name="T:IntralismSharedEditor.Event">
+            <summary>
+            новый класс эвента
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Event.IsMoving">
+            <summary>
+            храниит значение передвигается ли эвент
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Event.NeedUpdate">
+            <summary>
+            для эвент конфига
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Event.NeedRemove">
+            <summary>
+            для эвент конфига
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Event.UI">
+            <summary>
+            для эвент конфига
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Event.mapEventList">
+            <summary>
+            объект эвента для MapData
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.Time">
+            <summary>
+            возвращает/задаёт время эвента
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.BorderColor">
+            <summary>
+            возвращает/задаёт цвет эвента
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.IsSelected">
+            <summary>
+            возвращает/задаёт выделен ли эвент
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.LeftMargin">
+            <summary>
+            возвращает/задаёт свойство Margin.Left
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.BorderWidth">
+            <summary>
+            возвращает свойство ActualWidth
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.Type">
+            <summary>
+            возвращает тип эвента SpawnObj/Timing/Storyboard
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.EventCount">
+            <summary>
+            возвращает количество эвентов
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.Event.GetBorder">
+            <summary>
+            возвращает ссылку на border эвента
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.TryAddEvent(IntralismSharedEditor.MapEvent)">
+            <summary>
+            попытаться добавить мапэвент в Event 
+            </summary>
+            <param name="mevent">эвент</param>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.AddEvent(System.String)">
+            <summary>
+            попытаться добавить мапэвент в Event 
+            </summary>
+            <param name="data">тип</param>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.TryRemoveEvent(System.String)">
+            <summary>
+            попытаться удалить мапэвент из Event 
+            </summary>
+            <param name="type">тип</param>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.TrySetTime(System.String)">
+            <summary>
+            попробовать изменить время эвента
+            </summary>
+            <param name="t">время</param>
+            <returns></returns>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.GetData(System.Int32,System.String)">
+            <summary>
+            возвращает данные эвента под определенным индексом
+            </summary>
+            <param name="type">тип</param>
+            <param name="index">индекс</param>
+            <returns></returns>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.SetData(System.Int32,System.String,System.String)">
+            <summary>
+            записать данные под определенным индексом в эвент
+            </summary>
+            <param name="type">тип</param>
+            <param name="index">индекс</param>
+            <param name="data">данные</param>
+            <returns></returns>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.SetDefaultData(System.Collections.Generic.List{System.String})">
+            <summary>
+            устанавливает стандартные значения
+            </summary>
+            <param name="data">новое значение data[0]</param>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.ChangeSelect">
+            <summary>
+            переключает выделение эвента
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.#ctor(IntralismSharedEditor.Event)">
+            <summary>
+            создаёт эвенты при копировании
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.#ctor(IntralismSharedEditor.MapEvent)">
+            <summary>
+            создаёт эвенты при загрузке карты
+            </summary>
+            <param name="mevent">эвент</param>
+        </member>
+        <member name="M:IntralismSharedEditor.Event.#ctor(System.Double,System.Collections.Generic.List{System.String})">
+            <summary>
+            cоздаёт эвент
+            </summary>
+            <param name="time">время</param>
+            <param name="data">тип + данные</param>
+        </member>
+        <member name="T:IntralismSharedEditor.ConfigReg">
+            <summary>
+            Работа с данными реестра
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.ConfigReg.SubDir">
+            <summary>
+            Create key
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.ConfigReg.DeleteAll">
+            <summary>
+            Returns default settings
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.DirDefault">
+            <summary>
+            Save map folder
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.DirCreate">
+            <summary>
+            Initial directory when creating new map
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.DirLoad">
+            <summary>
+            Initial directory when loading new map
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.DirContinue">
+            <summary>
+            Initial directory when continue last map
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.DirResource">
+            <summary>
+            Initial directory when adding the resources
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.Theme">
+            <summary>
+            Choosed theme
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.LastEvent">
+            <summary>
+            Last spawned event
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.Version">
+            <summary>
+            Version of application
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.FPS">
+            <summary>
+            1 / FPS
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.CaretMargin">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.Zoom">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.ScrollSeconds">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.ScrollMills">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.TimingLength">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.TimingTimes">
+            <summary>
+            Extra for interface
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.NearTime">
+            <summary>
+            (ms) when events are really near
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.Mode">
+            <summary>
+            Debug mode
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.FullScreen">
+            <summary>
+            Full screen mode
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.IsKawaii">
+            <summary>
+            Idk what is it
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.ConfigReg.Q">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:IntralismSharedEditor.MapFileSystem">
+            <summary>
+            Класс, который может создать папку карты и всё чётко оформить
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapFileSystem.DefDir">
+            <summary>
+            Стандартная директория для карт
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapFileSystem.MapDirName">
+            <summary>
+            Директория карты
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapFileSystem.MusicName">
+            <summary>
+            Название песни (по умолчанию music.ogg)
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapFileSystem.ConfigName">
+            <summary>
+            Название конфига (по умолчанию map.data)
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapFileSystem.IconName">
+            <summary>
+            Название иконки (по умолчанию icon.jpg)
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.MusicPath">
+            <summary>
+            возвращает путь к музыке
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.ConfigPath">
+            <summary>
+            возвращает путь к конфигу
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.IconPath">
+            <summary>
+            возвращает путь к конфигу
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.ResDir">
+            <summary>
+            возвращает директорию ресурсов
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.BackDir">
+            <summary>
+            возвращает директорию бэкапов
+            </summary>
+        </member>
+        <member name="P:IntralismSharedEditor.MapFileSystem.MapDir">
+            <summary>
+            возвращает директорию карты
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapFileSystem.#ctor">
+            <summary>
+            пустой конструктор
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapFileSystem.#ctor(System.String)">
+            <summary>
+            Создать новую директорию
+            </summary>
+            <param name="path">Путь к музыке</param>
+        </member>
+        <member name="M:IntralismSharedEditor.MapFileSystem.#ctor(System.String,System.String,System.Collections.Generic.List{IntralismSharedEditor.MapResource},System.String)">
+            <summary>
+            Создать директорию (если .txt) | Загрузить директорию (если .data)
+            </summary>
+            <param name="path">Путь к музыке</param>
+            <param name="cpath">Путь к конфигу</param>
+            <param name="list">Список ресурсов</param>
+            <param name="icon">Имя иконки</param>
+        </member>
+        <member name="T:IntralismSharedEditor.UndoClass">
+            <summary>
+            отменяет действия
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.UndoClass.#ctor">
+            <summary>
+            коструктор
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.UndoClass.UndoStack">
+            <summary>
+            Стек всех действий в текущей сессии
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.UndoClass.RedoStack">
+            <summary>
+            Стек всех действий в текущей сессии
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.UndoClass.Undo">
+            <summary>
+            отменяет последнее действие
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.UndoClass.Redo">
+            <summary>
+            отменяет отменённое действие
+            </summary>
+        </member>
+        <member name="T:IntralismSharedEditor.CompareEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CompareEvent.Compare(IntralismSharedEditor.Event,IntralismSharedEditor.Event)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IntralismSharedEditor.CompareEvent.GetComparer">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:IntralismSharedEditor.CustomEditor">
+            <summary>
+            Основной класс кастомного редактора
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.CustomEditor.rand">
+            <summary>
+            случайное число int32
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEditor.GetMap(System.String)">
+            <summary>
+            Возвращает объект карты из config'а
+            </summary>
+            <param name="data">Текст из конфига</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEditor.GetConfig(IntralismSharedEditor.MapData)">
+            <summary>
+            Возвращает текст config'а из объекта карты
+            </summary>
+            <param name="data">объект карты</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEditor.GetTags">
+            <summary>
+            Возвращает список тегов
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEditor.GetEditorEventInfo(IntralismSharedEditor.MapEvent)">
+            <summary>
+            Возвращает описание определенного ивента
+            </summary>
+            <param name="mapEvent">ивыент</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEditor.GetParametrEditor(IntralismSharedEditor.EditorEventFunctionInfo.EditorEventParametr,System.String)">
+            <summary>
+            Возвращает редактор параметра для ивента. Использовать GetType() и typeof для уточнения класса)
+            </summary>
+            <param name="parametr">Параметр</param>
+            <param name="value">Дата параметра</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler.Init(System.String,System.String)">
+            <summary>
+            Метод Init()
+            </summary>
+            <param name="data">Исходная дата</param>
+            <param name="advParametrs">Параметры</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler.GetEditedData">
+            <summary>
+            Метод GetEditedData() возвращает string из параметров для data
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_ArcSelector.Init(System.String,System.String)">
+            <summary>
+            Метод Init()
+            </summary>
+            <param name="data">Исходная дата</param>
+            <param name="advParametrs">Параметры</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_ArcSelector.GetEditedData">
+            <summary>
+            Метод GetEditedData() возвращает string из параметров для data
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_InputField.Init(System.String,System.String)">
+            <summary>
+            Метод Init()
+            </summary>
+            <param name="data">Исходная дата</param>
+            <param name="advParametrs">Параметры</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_InputField.GetEditedData">
+            <summary>
+            Метод GetEditedData() возвращает string из параметров для data
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_Slider.Init(System.String,System.String)">
+            <summary>
+            Метод Init()
+            </summary>
+            <param name="data">Исходная дата</param>
+            <param name="advParametrs">Параметры</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_Slider.GetEditedData">
+            <summary>
+            Метод GetEditedData() возвращает string из параметров для data
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_Toggle.Init(System.String,System.String)">
+            <summary>
+            Метод Init()
+            </summary>
+            <param name="data">Исходная дата</param>
+            <param name="advParametrs">Параметры</param>
+        </member>
+        <member name="M:IntralismSharedEditor.CustomEventEditorHandler_Toggle.GetEditedData">
+            <summary>
+            Метод GetEditedData() возвращает string из параметров для data
+            </summary>
+        </member>
+        <member name="T:IntralismSharedEditor.Helpers">
+            <summary>
+             Класс Helpers
+             содержит основные переменные
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Helpers.eventsMap">
+            <summary>
+            Пункты, отображаемые в редакторе эвентов
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Helpers.patternsMap">
+            <summary>
+            все виды арок
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Helpers.eventTypes">
+            <summary>
+            все виды эвентов
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Helpers.tags">
+            <summary>
+            тэги воркшопа
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.Helpers.Arcs">
+            <summary>
+            все  виды арок, но в виде словаря
+            </summary>
+        </member>
+        <member name="T:IntralismSharedEditor.MapEvent">
+            <summary>
+            Класс ивента
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapEvent.time">
+            <summary>
+            double время эвента
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapEvent.data">
+            <summary>
+            data[0] - ID метода
+            data[1] - параметры метода
+            пример: {"time":209.896347,"data":["SpawnObj","[Up],2"]}
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapEvent.#ctor">
+            <summary>
+            Пустой эвент
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapEvent.#ctor(IntralismSharedEditor.MapEvent,System.Boolean)">
+            <summary>
+            Эвент, копирующий заданный в параметре
+            </summary>
+            <param name="mevent">MapEvent</param>
+            <param name="isNew"></param>
+        </member>
+        <member name="M:IntralismSharedEditor.MapEvent.#ctor(System.Double,System.Collections.Generic.List{System.String})">
+            <summary>
+            Создает эвент с заданным временем и содержанием
+            </summary>
+            <param name="newtime">время</param>
+            <param name="newtype">тип</param>
+        </member>
+        <member name="T:IntralismSharedEditor.MapResource">
+            <summary>
+            Класс ресурса карты
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapResource.name">
+            <summary>
+            ID ресурса
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapResource.type">
+            <summary>
+            Тип ресурса, пока только Sprite
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapResource.path">
+            <summary>
+            Относительный путь
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapResource.hash">
+            <summary>
+            MD5 сумма ресурса
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapResource.#ctor">
+            <summary>
+            Пустой объект ресурса
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapResource.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            создаёт объект ресурса карты
+            </summary>
+            <param name="name">имя ресурса</param>
+            <param name="type">тип (обычно Sprite)</param>
+            <param name="path">путь к ресурсу</param>
+            <param name="hash">хэш</param>
+        </member>
+        <member name="T:IntralismSharedEditor.MapData">
+            <summary>
+            Основной класс карты, содержит все данные
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.id">
+            <summary>
+            ID должен соответствовать названию папки
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.name">
+            <summary>
+            Название карты
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.info">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.handCount">
+            <summary>
+            Количество рук
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.moreInfoURL">
+            <summary>
+            Ссылка, заданая пользователем
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.speed">
+            <summary>
+            Скорость
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.lives">
+            <summary>
+            Жизни
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.maxLives">
+            <summary>
+            Макс. жизней
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.musicFile">
+            <summary>
+            Путь до муз. файла
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.musicTime">
+            <summary>
+            Точная длительность музыки
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.iconFile">
+            <summary>
+            Путь до обложки
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.hidden">
+            <summary>
+            Скрывать, пока заблокирована
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.levelResources">
+            <summary>
+            Ресурсы - массив из объектов
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.tags">
+            <summary>
+            Массив тегов
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.unlockConditions">
+            <summary>
+            Условие доступности карты
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.checkpoints">
+            <summary>
+            Массив чекпоинтов (их время в секундах)
+            </summary>
+        </member>
+        <member name="F:IntralismSharedEditor.MapData.events">
+            <summary>
+            Массив всех ивентов на карте
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapData.#ctor">
+            <summary>
+            пустой конструктор
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.MapData.#ctor(IntralismSharedEditor.MapData)">
+            <summary>
+            коструктор
+            </summary>
+            <param name="mapData"></param>
+        </member>
+        <member name="T:IntralismSharedEditor.EditorEventFunctionInfo">
+            <summary>
+            не используется
+            </summary>
+        </member>
+        <member name="M:IntralismSharedEditor.EditorEventFunctionInfo.EditorEventParametr.#ctor(System.String,IntralismSharedEditor.EditorEventFunctionInfo.EditorEventParametrType,System.String,System.String)">
+            <summary>
+            Метод EditorEventParametr() является
+            конструктором
+            </summary>
+            <param name="name">Имя параметра</param>
+            <param name="editor">Тип редактора</param>
+            <param name="description">Описание параметра</param>
+            <param name="data">Дополнительные данные параметра</param>
+        </member>
+        <member name="M:IntralismSharedEditor.EditorEventFunctionInfo.#ctor(System.String,System.Collections.Generic.List{IntralismSharedEditor.EditorEventFunctionInfo.EditorEventParametr},System.String)">
+            <summary>
+            Метод EditorEventFunctionInfo() является
+            конструктором
+            </summary>
+            <param name="id">Точное id ивента</param>
+            <param name="parameters">Параметры ивента</param>
+            <param name="functionDescription">Описание ивента</param>
+        </member>
+    </members>
+</doc>

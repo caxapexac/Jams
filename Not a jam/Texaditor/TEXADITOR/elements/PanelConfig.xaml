@@ -1,0 +1,230 @@
+﻿<StackPanel x:Class="TEXADITOR.elements.PanelConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TEXADITOR.elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="300">
+    <StackPanel x:Name="PanelMain">
+        <StackPanel Background="White" Margin="0" Height="80">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                <Label Content="Event type:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0"/>
+                <Label x:Name="PropType" Content="ERROR" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                <Label Content="Event time:" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="PropTime" TextWrapping="Wrap" Text="00.0000" MinWidth="100" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Button x:Name="ButTime" Content="Apply" Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                <Button x:Name="ButRem" Content="Remove" Margin="0" Focusable="False"/>
+                <Button x:Name="ButCopy" Content="Copy" Margin="5,0,0,0" Focusable="False" IsEnabled="False"/>
+                <Button x:Name="ButPaste" Content="Paste" Margin="5,0,0,0" Focusable="False" IsEnabled="False"/>
+                <Button x:Name="ButSel" Content="Select" Margin="5,0,0,0" IsEnabled="True" Focusable="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0" Visibility="Collapsed">
+                <Button x:Name="ButSetDefault" Content="Set as default" Margin="5,0,0,0" IsEnabled="False" Focusable="False"/>
+                <Button x:Name="ButLoadDefault" Content="Load default" Margin="5,0,0,0" IsEnabled="False" Focusable="False"/>
+            </StackPanel>
+        </StackPanel>
+        <Separator Height="10" Margin="0" Background="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+    </StackPanel>
+    <StackPanel x:Name="PanelStoryboard">
+        <TabControl Height="auto" Background="White">
+            <TabItem x:Name="TabColor" Header="Color" FontSize="14" Margin="0" BorderBrush="Black">
+                <StackPanel>
+                    <Button x:Name="ButSwitchColor" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchColor" Margin="0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Rectangle x:Name="PropColorColor" Fill="#FFF4F4F5" Stroke="Black" Margin="0" Width="100"/>
+                            <Button x:Name="ButColor" Content="SET COLOR" Margin="0" Focusable="False"/>
+                        </StackPanel>
+                        <Border x:Name="ColorBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Speed:" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="PropColorSpeed" TextWrapping="Wrap" Text="00" VerticalContentAlignment="Center" Margin="0" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="30"/>
+                            <StackPanel>
+                                <Button x:Name="ButColorSpeedUp" Content="^" Height="18" Focusable="False"/>
+                                <Button x:Name="ButColorSpeedDown" Content="^" Height="18" RenderTransformOrigin="0.5,0.5" Focusable="False">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                </Button>
+                            </StackPanel>
+                            <Button x:Name="ButColorSpeed" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabDistance" Header="Distance" FontSize="14" Margin="0" BorderBrush="Black">
+                <StackPanel Margin="0">
+                    <Button x:Name="ButSwitchDistance" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchDistance" Margin="0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Distance:" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="PropDistanceDistance" Text="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalScrollBarVisibility="Disabled" MaxWidth="60" Focusable="False"/>
+                            <Slider Margin="0" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" Minimum="10" Maximum="30" TickPlacement="Both" Value="{Binding Text, ElementName=PropDistanceDistance}" MinWidth="140" SmallChange="1" Interval="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabText" Header="Text" FontSize="14" Margin="0" BorderBrush="Black">
+                <StackPanel Margin="0">
+                    <Button x:Name="ButSwitchText" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchText" Margin="0">
+                        <StackPanel Margin="0">
+                            <Label Content="Text:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="PropTextText" TextWrapping="Wrap" Text="ERROR" VerticalScrollBarVisibility="Auto" Width="294" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Length:" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="PropTextLenght" Text="1" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="Disabled" MinWidth="50" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Button x:Name="ButTextLengthUp" Content="^" Height="18" VerticalAlignment="Center" HorizontalAlignment="Center" Focusable="False"/>
+                                <Button x:Name="ButTextLengthDown" Content="^" Height="18" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Focusable="False">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                </Button>
+                            </StackPanel>
+                            <Label Content="seconds" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <Button x:Name="ButTextLength" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabPicture" Header="Picture" FontSize="14" Margin="0" BorderBrush="Black">
+                <StackPanel Margin="0">
+                    <Button x:Name="ButSwitchPicture" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchPicture" Margin="0">
+                        <StackPanel Margin="0">
+                            <Label Content="Image:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <ComboBox x:Name="PropPicturePicture" Margin="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="200" Height="128" Focusable="False"/>
+                            <Label x:Name="PropPictureName" Content="NAME" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                            <Label x:Name="PropPicturePath" Content="PATH" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Center" Margin="0" Orientation="Horizontal">
+                            <RadioButton x:Name="PropPictureBackground" GroupName="PictureDepth" Content="Background" Focusable="False" Margin="0,0,10,0" />
+                            <RadioButton x:Name="PropPictureForeground" GroupName="PictureDepth" Content="Foreground" Focusable="False" />
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Center" Margin="50.5,0" Orientation="Horizontal">
+                            <CheckBox x:Name="PropPictureKeep" Content="Keep aspect ratio" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Focusable="False"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Length:" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="PropPictureLength" Text="1" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="Disabled" MinWidth="50" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Button x:Name="ButPictureLengthUp" Content="^" Height="18" VerticalAlignment="Center" HorizontalAlignment="Center" Focusable="False"/>
+                                <Button x:Name="ButPictureLengthDown" Content="^" Height="18" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Focusable="False">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                </Button>
+                            </StackPanel>
+                            <Label Content="seconds" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button x:Name="ButPictureLength" Content="Apply" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem x:Name="TabEnd" Header="End" FontSize="14" Margin="0" BorderBrush="Black">
+                <StackPanel Margin="0">
+                    <Button x:Name="ButSwitchEnd" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" Foreground="Black" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchEnd" Margin="0">
+                        <Label Content="MAP END" VerticalContentAlignment="Center" Margin="0" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+    <StackPanel x:Name="PanelGameplay">
+        <TabControl Height="auto" Background="White">
+            <TabItem Header="Arc" FontSize="14" BorderBrush="Black">
+                <StackPanel x:Name="PanelArcLeft" Margin="0,0,-4,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Arc type:"/>
+                        <Label x:Name="PropArcType" Content="ERROR" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <Separator Height="10" Margin="0"/>
+                    <StackPanel Height="26" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Hand:" Height="26"/>
+                        <Label x:Name="PropArcHand" Content="ERROR"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+    <StackPanel x:Name="PanelMapping">
+        <TabControl Height="auto">
+            <TabItem Header="Timing" FontSize="14" BorderBrush="Black">
+                <StackPanel Margin="0,0,-4,0">
+                    <Button x:Name="ButSwitchTiming" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchTiming" Margin="0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Frequency:" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBox x:Name="PropTimingFrequency" Text="0.000" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="70"/>
+                            <Label Content="OR" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <Label Content="BPM:" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBox x:Name="PropTimingBPM" Text="0.000" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" MinWidth="50" MaxWidth="70"/>
+                            <Button x:Name="ButTimingFrequency" Content="Apply" Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Offset, s" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBox x:Name="PropTimingFirstTick" Text="0.000" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" MinWidth="50"/>
+                            <Button x:Name="ButTimingFirstTick" Content="Apply" Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Width:" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label x:Name="PropTimingWidth" Content="0" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0">
+                            <Label Content="Tick number:" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBox x:Name="PropTimingTickNum" Text="0" VerticalContentAlignment="Center" Margin="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" MinWidth="30"/>
+                            <Button x:Name="ButTimingTickNum" Content="Apply" Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                        <Button x:Name="ButSetTiming" Content="SET TIMING" Margin="0" Focusable="False" HorizontalAlignment="Center" Foreground="Black" Padding="4">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FFBDBDBD" Offset="0.506"/>
+                                    <GradientStop Color="White" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Note (debug)" FontSize="14" BorderBrush="Black">
+                <StackPanel Width="294">
+                    <Button x:Name="ButSwitchNote" Content="ADD EVENT" HorizontalAlignment="Center" Focusable="False" Background="White" Margin="0,0,0,5" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold"/>
+                    <StackPanel x:Name="SwitchNote" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Margin="0" VerticalAlignment="Center">
+                            <Label Content="Note:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBox x:Name="PropNoteText" TextWrapping="Wrap" Text="ERROR" VerticalScrollBarVisibility="Auto" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Button x:Name="ButMarker" Content="Marker" HorizontalAlignment="Center" Width="128" Margin="0" IsEnabled="False" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+</StackPanel>

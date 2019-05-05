@@ -1,0 +1,24 @@
+﻿<Border x:Name="MainBorder" x:Class="TEXADITOR.elements.WEventArc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TEXADITOR.elements"
+             mc:Ignorable="d"  
+             d:DesignHeight="400" d:DesignWidth="60" OpacityMask="White">
+    <Grid>
+        <Polygon x:Name="ColorPolygon" Stroke="Black" Points="30,0 60,30 60,370 30,400 0,370 0,30" Fill="{Binding OpacityMask, ElementName=MainBorder}"/>
+        <Label x:Name="CountLabel" Content="0" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        <StackPanel Margin="0,25" VerticalAlignment="Center">
+            <Image x:Name="UpImage" Height="60" Source="/TEXADITOR;component/res/UpArc.png" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image x:Name="LeftImage" Height="80" Source="/TEXADITOR;component/res/LeftArc.png" Width="35" Margin="0" />
+                <Image x:Name="RightImage" Height="80" Source="/TEXADITOR;component/res/RightArc.png" Width="35" Margin="0"/>
+            </StackPanel>
+            <Image x:Name="DownImage" Height="60" Source="/TEXADITOR;component/res/DownArc.png"/>
+        </StackPanel>
+        <Polyline Fill="#FFF4F4F5" Margin="0,25" Stroke="Black" Points="{x:Null}"/>
+
+
+    </Grid>
+</Border>

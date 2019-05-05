@@ -1,0 +1,25 @@
+﻿<Border x:Name="MainBorder" x:Class="TEXADITOR.elements.WEventTiming"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TEXADITOR.elements"
+             mc:Ignorable="d" 
+             d:DesignHeight="160" d:DesignWidth="60" OpacityMask="White" 
+             >
+
+    <Grid>
+        <Polygon x:Name="ColorPolygon" Fill="{Binding OpacityMask, ElementName=MainBorder}" Stroke="Black" Points="30,0 60,30 60,160 0,160 0,30"/>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Label x:Name="CountLabel" Content="0" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Label x:Name="FreqLabel" Content="0" HorizontalAlignment="Center" Margin="0,8,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="0" FontSize="11"/>
+            <Label x:Name="FirstLabel" Content="0" HorizontalAlignment="Center" Margin="0,8,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Padding="0" FontSize="11"/>
+            <TextBlock x:Name="NoteBlock" TextWrapping="Wrap" Text="TextBlock" MaxWidth="50" MaxHeight="50" Margin="0,8,0,0" FontSize="11"/>
+        </StackPanel>
+        <StackPanel Margin="0,0,0,25" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="TimingImage" Source="/TEXADITOR;component/res/Timing.png" Width="30"/>
+            <Image x:Name="NoteImage" Source="/TEXADITOR;component/res/Note.png" Width="30"/>
+        </StackPanel>
+
+    </Grid>
+</Border>

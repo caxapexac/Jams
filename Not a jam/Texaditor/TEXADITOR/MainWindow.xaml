@@ -1,0 +1,318 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TEXADITOR"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="TEXADITOR.MainWindow"
+        mc:Ignorable="d"
+        Title="TEXADITOR" FontFamily="/TEXADITOR;component/res/#OCR-A BT" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0" WindowStartupLocation="CenterScreen" AllowDrop="True" IsHitTestVisible="True" MinWidth="710" MinHeight="200" KeyDown="Window_KeyDown" BorderThickness="25,25,30,30" WindowStyle="None" AllowsTransparency="True" MouseDown="Window_MouseDown" Opacity="0.75" ResizeMode="NoResize" SizeToContent="WidthAndHeight" MaxWidth="650" Padding="50" Background="{x:Null}">
+    <Window.Resources>
+        <ControlTemplate x:Key="GlassButton" TargetType="{x:Type Button}" >
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="Timeline1">
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleX" 
+                        To="1.1"
+                        Duration="00:00:00.3000000"/>
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleY" 
+                        To="1.1"
+                        Duration="00:00:00.3000000"/>
+                </Storyboard>
+                <Storyboard x:Key="Timeline2">
+
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleX" 
+                        To="1.0"
+                        Duration="00:00:00.3000000"/>
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleY" 
+                        To="1.0"
+                        Duration="00:00:00.3000000"/>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Border BorderBrush="White" 
+                    BorderThickness="1,1,1,1" 
+                    CornerRadius="4,4,4,4"
+                    RenderTransformOrigin="0.5,0.5"
+                    Name="border"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="10"
+                    Height="80"
+                    Width="170">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF323232" Offset="0.022"/>
+                        <GradientStop Color="White" Offset="0.625"/>
+                        <GradientStop Color="White" Offset="0.325"/>
+                        <GradientStop Color="#FF323232" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.RenderTransform>
+                    <ScaleTransform x:Name="borderScaleTransform"/>
+                </Border.RenderTransform>
+                <ContentControl  FontSize="25"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 FontWeight="Bold"
+                                 Content="{TemplateBinding Content}" TextOptions.TextHintingMode="Animated"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderBrush" 
+                            TargetName="border" 
+                            Value="#ffff0000"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline1}"/>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline2}"/>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ExitButton" TargetType="{x:Type Button}" >
+            <ControlTemplate.Resources>
+                <Storyboard x:Key="Timeline1">
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleX" 
+                        To="1.1"
+                        Duration="00:00:00.3000000"/>
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleY" 
+                        To="1.1"
+                        Duration="00:00:00.3000000"/>
+                </Storyboard>
+                <Storyboard x:Key="Timeline2">
+
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleX" 
+                        To="1.0"
+                        Duration="00:00:00.3000000"/>
+                    <DoubleAnimation 
+                        Storyboard.TargetName="borderScaleTransform" 
+                        Storyboard.TargetProperty="ScaleY" 
+                        To="1.0"
+                        Duration="00:00:00.3000000"/>
+                </Storyboard>
+            </ControlTemplate.Resources>
+            <Border BorderBrush="White" 
+                    BorderThickness="1,1,1,1" 
+                    CornerRadius="4,4,4,4"
+                    RenderTransformOrigin="0.5,0.5"
+                    Name="border"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0"
+                    Height="30"
+                    Width="auto"
+                    MinWidth="30">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF323232" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.509"/>
+                        <GradientStop Color="#FF323232"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.RenderTransform>
+                    <ScaleTransform x:Name="borderScaleTransform"/>
+                </Border.RenderTransform>
+                <ContentControl  FontSize="18"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 FontWeight="Bold"
+                                 Content="{TemplateBinding Content}" TextOptions.TextHintingMode="Animated" Foreground="Black" TextOptions.TextFormattingMode="Ideal">
+                </ContentControl>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderBrush" 
+                            TargetName="border" 
+                            Value="#ffff0000"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline1}"/>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard Storyboard="{StaticResource Timeline2}"/>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="2" ShadowDepth="7" RenderingBias="Quality"/>
+    </Window.Effect>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Margin="30">
+            <Grid.Background>
+                <ImageBrush ImageSource="res/back.png"/>
+            </Grid.Background>
+            <DockPanel LastChildFill="False" Margin="0">
+                <StackPanel Margin="0" DockPanel.Dock="Bottom" >
+                    <TextBlock TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center" Text="THEME" FontSize="20" Visibility="Collapsed"/>
+                    <Label Content="PLEASE REPORT ME ABOUT ALL THE BUGS YOU CAN FIND" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="Red" Visibility="Collapsed"/>
+                    <ListBox x:Name="Themer" SelectedItem="Default" Height="199" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" SelectionChanged="ListBox_SelectionChanged" BorderBrush="Black" Foreground="{x:Null}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" UseLayoutRounding="True" Background="{x:Null}" ScrollViewer.CanContentScroll="False" Margin="0" Visibility="Collapsed">
+                        <ListBoxItem x:Name="Default" VerticalContentAlignment="Stretch" Padding="0" Background="{x:Null}" IsSelected="True" Foreground="{x:Null}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Image Height="64"  Width="64"/>
+                                <Label Content="Default" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="Black">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="64" Width="64"/>
+                                <Label Content="Black" FontSize="36" Padding="0" ScrollViewer.CanContentScroll="True" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="Caxa">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="64" Width="64"/>
+                                <Label Content="Caxaditor" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="Sharp" Padding="2,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="64" Width="64"/>
+                                <Label Content="Sharpiditor" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem x:Name="Oxy">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="64" Width="64"/>
+                                <Label Content="Oxyditor" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                    <Button x:Name="MapFolder" Content="Choose map folder..." HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Focusable="False" Margin="0,0,0,5" FontSize="20" Template="{DynamicResource ExitButton}" Width="270" Click="MapFolder_Click" ToolTip="Where should I save your maps"/>
+                    <CheckBox x:Name="FullScreenBox" HorizontalAlignment="Center" Content="Full Screen Mode" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Background="White" FontSize="20" Foreground="White" BorderBrush="Black" Checked="FullScreenBox_Checked" Unchecked="FullScreenBox_Unchecked" Padding="4,0" Margin="0" Focusable="False" FontWeight="Bold"/>
+                    <Label x:Name="Version" Content="Alpha 1.6.7" HorizontalAlignment="Center" FontSize="14" VerticalAlignment="Center" HorizontalContentAlignment="Center" Margin="0" MouseRightButtonDown="Info_MouseRightButtonDown" Width="137" VerticalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" FontStyle="Italic" MouseDoubleClick="Info_MouseDoubleClick" Background="{x:Null}" AutomationProperties.HelpText="Click me!" Foreground="White"/>
+                    <StackPanel x:Name="SecretPanel" HorizontalAlignment="Center" Visibility="Collapsed">
+                        <Button x:Name="ReturnDefault" Content="RETURN DEFAULT SETTINGS" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Focusable="False" Click="ReturnDefault_Click"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <CheckBox x:Name="KawaiiBox" Content="KAWAII OFF" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Checked="KawaiiBox_Checked" Unchecked="KawaiiBox_Unchecked" Focusable="False"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Content="Secret pass:" Margin="0"/>
+                            <PasswordBox x:Name="PassBox" BorderBrush="Black" SelectionBrush="#FF00008D" Background="White" HorizontalAlignment="Center" Width="50" Height="20" MaxLength="8" Margin="0" PreviewKeyDown="PassBox_KeyDown"/>
+                            <Button x:Name="GetBut" Content="GET!" Margin="0" BorderBrush="Black" Background="Red" Foreground="White" Click="GetBut_Click" Visibility="Collapsed"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Content="Times count:"/>
+                            <TextBox x:Name="TimesBox" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" MinWidth="50" TextChanged="TextBox_TextChanged"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Label Content="FPS:"/>
+                            <TextBox x:Name="TickBox" TextWrapping="Wrap" VerticalAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" MinWidth="50" TextChanged="TickBox_TextChanged"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="0" Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                    <Button x:Name="CreateButton" Template="{StaticResource GlassButton}" Content="Create map" Click="ChooseMapButton" ToolTip="Create new map using .OGG music">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8F8F8F" Offset="0.004"/>
+                                <GradientStop Color="White" Offset="0.506"/>
+                                <GradientStop Color="#FF8F8F8F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="LoadButton" Template="{StaticResource GlassButton}" Content="Load map" Click="LoadButton_Click" ToolTip="Load map from config.txt OR map.data"  >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8F8F8F" Offset="0.004"/>
+                                <GradientStop Color="White" Offset="0.506"/>
+                                <GradientStop Color="#FF8F8F8F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="ContinueButton" Template="{StaticResource GlassButton}" Content="Continue" Click="Continue_Click" ToolTip="Continue editing last loaded/created map" >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8F8F8F" Offset="0.004"/>
+                                <GradientStop Color="White" Offset="0.506"/>
+                                <GradientStop Color="#FF8F8F8F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Triggers>
+
+                            <EventTrigger RoutedEvent="UIElement.MouseEnter"/>
+                        </Button.Triggers>
+
+                    </Button>
+                </StackPanel>
+                <Button Template="{StaticResource ExitButton}" Content="X" HorizontalAlignment="Right" Margin="0,10,10,0" FontSize="16" Click="ExitButton_Click" BorderBrush="Red" Foreground="White" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="30" DockPanel.Dock="Right" VerticalContentAlignment="Center" ToolTip="Close">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="20" ShadowDepth="2"/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5F5F5F" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Grid VerticalAlignment="Center" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,2,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="Wrap" Text="TEXADITOR" FontSize="48" TextAlignment="Center" Margin="0" Padding="0,10,0,0" FontWeight="Bold" TextDecorations="{x:Null}" TextOptions.TextFormattingMode="Display" Foreground="White">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Grid>
+            </DockPanel>
+        </Grid>
+
+        <Label x:Name="Hint" Content="The unstablest!" VerticalAlignment="Top" Margin="246,43,0,0" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Padding="0" UseLayoutRounding="False" TextOptions.TextHintingMode="Animated" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="4" ShadowDepth="2"/>
+            </Label.Effect>
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="17.433"/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+
+        </Label>
+
+    </Grid>
+</Window>
