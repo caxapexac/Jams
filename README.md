@@ -21,4 +21,5 @@
 
 ### Not a jam (simple prototypes just for myself)
 - [Ironsphere] (2017)
+- [Texaditor] (2018)
 - [Rogue] (2019)
