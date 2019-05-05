@@ -1,0 +1,1 @@
+Made in Macromedia Flash MX (not mx 2004)
