@@ -19,6 +19,7 @@
 - [Lemon switcher](https://onehourgamejam.com/?page=jam&jam=193) (2019, 193, A Bug? No, that's a Feature!)
 - [Hugo Boss Fight](https://onehourgamejam.com/?page=jam&jam=194) (2019, 194, Boss fight) [Play!](https://caxap.itch.io/hugo-boss-fight)
 - [Invisible Game](https://onehourgamejam.com/?page=jam&jam=212) (2019, 212, Invisible) [Play!](https://caxap.itch.io/invisible-game)
+- [Laser Meter 3D](https://onehourgamejam.com/?page=jam&jam=218) (2019, 218, Lasers) [Play!](https://caxap.itch.io/lasermeter3d)
 
 ### Not a jam (simple prototypes just for myself)
 - [Ironsphere] (2017)
