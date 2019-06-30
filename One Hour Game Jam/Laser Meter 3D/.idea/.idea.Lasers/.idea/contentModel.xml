@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\caxap\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\caxap\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Lasers.-2116625906.00" t="ExcludeRecursive" />
+    <e p="D:\Awork\Accel_2019\Unity projects\Lasers" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Brick.cs" t="Include" />
+          <e p="God.cs" t="Include" />
+          <e p="Laser.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="Rotator.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
+        </e>
+        <e p="Starfield Skybox" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Script" t="Include">
+              <e p="LookCamera.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Lasers.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
