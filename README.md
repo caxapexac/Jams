@@ -10,6 +10,7 @@
 ### Ludum Dare ([Profile](https://onehourgamejam.com/?page=author&author=cax))
 - [ScreenCrifice](https://ldjam.com/events/ludum-dare/43/screencrifice) (2018, 43, Sacrifices must be made) [Play!](https://caxap.itch.io/screencrifice)
 - [ForexPlatformer](https://ldjam.com/events/ludum-dare/44/forex-platformer) (2019, 44, Sacrifices must be made)
+- [Spedoss](https://ldjam.com/events/ludum-dare/45/speedoss) (2019, 45, Start with nothing)
 
 ### One Hour Game Jam ([Profile](https://onehourgamejam.com/?page=author&author=cax))
 - [Coin Up](https://onehourgamejam.com/?page=jam&jam=187) (2018, 187, Going up!)
