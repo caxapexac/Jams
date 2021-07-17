@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stuck In A Loop Online</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/assets/indikator.png">
+  <meta property="description" content=".io-like game for Ludum Dare 47">
+  <meta property="og:title" content="Stuck in a loopio">
+  <meta property="og:description" content=".io-like game for Ludum Dare 47">
+  <meta property="og:image" content="/assets/indikator.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58664433-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-58664433-3');
+  </script>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+  <div id="play-menu" class="hidden">
+    <h1>Stuck In A Loop Online Mmo</h1>
+    <img src="/assets/indikator_purple.png">
+    <p>
+      Move your <b>mouse</b> to move in direction
+      <br />
+      Hold your mouse to <b>boost</b>
+      <br />
+      Collect <b>stars</b> to increase you speed
+      <br />
+      <b>Stay alive</b> and kill other players
+      <br />
+      Because they stuck in <b>YOUR</b> loop
+    </p>
+    <hr />
+    <p>
+      Created for <a href="https://ldjam.com/events/ludum-dare/47">Ludum Dare 47</a>
+    </p>
+    <hr />
+    <input id="username-input" type="text" tabindex="0" autofocus placeholder="Username" maxlength="32"/>
+    <button id="play-button">Play</button>
+    <button id="spectate-button">Spectate</button>
+  </div>
+  <div id="leaderboard" class="hidden">
+    40% of neighbour for kill
+    <br />
+    100 points per star
+    <br />
+    Online: <label id="players-count">-</label>
+    <br />
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+    Your score: <label id=score>0</label>
+  </div>
+  <div id="global-leaderboard" class="hidden">
+    <b>GLOBAL LEADERBOARD</b>
+    <br />
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+    </table>
+    <b>Total plays: <label id="total-plays"></label></b>
+  </div>
+  <div id="chat" class="hidden">
+    <button id="chat-hide-button">Press '~' or this button to hide chat</button>
+    <ul id="chat-list" class="chat-list"></ul>
+    <span>
+      <input id="chat-input" type="text" class="chat-input" placeholder="Chat..." maxlength="35" />
+      <button id="chat-button">Send</button>
+    </span>
+    <button id="add-bot-button">Add bot</button>
+  </div>
+  <div id="disconnect-modal" class="hidden">
+    <div>
+      <h2>Disconnected from Server </h2>
+      <hr />
+      <button id="reconnect-button">RECONNECT</button>
+    </div>
+  </div>
+</body>
+</html>

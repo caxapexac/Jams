@@ -1,0 +1,1 @@
+Make it work without dedicated server
