@@ -1,0 +1,1 @@
+particles_emit_toggle(!particles_emitter_enabled)

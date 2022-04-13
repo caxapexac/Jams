@@ -1,0 +1,1 @@
+particles_init(spr_particle_leg_smoke, 1, 32);

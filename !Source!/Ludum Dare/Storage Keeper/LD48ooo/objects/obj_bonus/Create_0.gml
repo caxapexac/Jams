@@ -1,0 +1,1 @@
+init_as_box_content();

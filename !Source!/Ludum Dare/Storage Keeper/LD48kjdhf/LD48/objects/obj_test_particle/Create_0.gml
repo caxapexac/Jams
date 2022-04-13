@@ -1,0 +1,8 @@
+particles_init(spr_particle_leg_smoke, 1, 32)
+particles_init_param_destructor(16)
+particles_init_param_displacement(0, 0, 0, 0)
+particles_init_param_emitter(0.2)
+particles_init_param_gravity(0.2, 0.1)
+particles_init_param_lifetime(0.2, 0.3)
+particles_init_param_scale(0.3, 0.8, 0.1, 0.3)
+particles_init_param_speed(-2, 2, -2, 2, 0, 0, 1, 1)

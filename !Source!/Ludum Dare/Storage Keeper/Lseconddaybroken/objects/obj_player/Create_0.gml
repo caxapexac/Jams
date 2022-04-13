@@ -1,0 +1,131 @@
+
+function square_cast_xy(_x, _y) {
+	return square_cast(
+        _x - x + collider_x1,
+        _y - y + collider_y1,
+        _x - x + collider_x2,
+        _y - y + collider_y2
+    );
+}
+
+function square_cast(_x1, _y1, _x2, _y2) {
+	ds_list_clear(global.buffer_collision_list);
+	collision_rectangle_list(_x1, _y1, _x2, _y2, obj_solid, true, true, global.buffer_collision_list, false)
+	var count = ds_list_size(global.buffer_collision_list);
+	for(var i = 0; i < count; i++) {
+		var instance = global.buffer_collision_list[|i];
+		if(instance.realy_solid)
+			return instance;
+	}
+	return noone;
+}
+
+function can_grab(_obj) {
+    if (_obj == noone) return false;
+    if (holded != noone) return false;
+    return true;
+    mask_index = spr_player_collision_hold
+    var collided = place_meeting(x, y, obj_solid)
+    update_collision_mask();
+    return collided;
+    //if (square_cast(collider_x1, collider_y1 - _obj.sprite_height, collider_x2, collider_y2)) return false;
+    //return true;
+}
+
+function grab(_obj) {
+	holded = _obj;
+	holded.realy_solid = false;
+	holded.grabbed = true;
+    holded.mask_index = spr_empty;
+}
+
+function ungrab() {
+    //holded.mask_index 
+    // todo
+}
+    
+function get_nearest_vertical_grabbable(_down, _debug) {
+    // squarecast
+    ds_list_clear(global.buffer_collision_list);
+	var drx1 = bbox_left;
+	var dry1 = bbox_bottom;
+	var drx2 = bbox_right;
+	var dry2 = bbox_bottom + hand_vertical_length;
+	collision_rectangle_list(drx1, dry1, drx2, dry2, obj_solid, false, true, global.buffer_collision_list, false)
+	var count = ds_list_size(global.buffer_collision_list);
+	var center = (bbox_left + bbox_right) * 0.5;
+    
+    // find nearest
+	var detected = noone;
+	for(var i = 0; i < count; i++)
+	{
+		var other_detected = global.buffer_collision_list[|i];
+		if (!other_detected.grabable) continue;
+		if (detected == noone) {
+			detected = other_detected;
+		}
+		else if (abs(center - (other_detected.bbox_left + other_detected.bbox_right) * 0.5) < abs(center - (detected.bbox_left + detected.bbox_right) * 0.5))
+		{
+			detected = other_detected;
+		}
+	}
+	
+	if _debug {
+		draw_rectangle(drx1, dry1, drx2, dry2, true);
+		if detected {
+			draw_rectangle(detected.bbox_left, detected.bbox_top, detected.bbox_right, detected.bbox_bottom, true)
+		}
+	}
+	
+	return detected;
+}
+
+function get_nearest_horizontal_grabbable(_right, _debug) {
+    // squarecast
+    ds_list_clear(global.buffer_collision_list);
+	var drx1;
+	var dry1 = bbox_top;
+	var drx2;
+	var dry2 = bbox_bottom;
+	if _right {
+		drx1 = bbox_right;
+		drx2 = bbox_right + hand_horizontal_length;
+	} else {
+		drx1 = bbox_left;
+		drx2 = bbox_left - hand_horizontal_length;
+	}
+	collision_rectangle_list(drx1, dry1, drx2, dry2, obj_solid, false, true, global.buffer_collision_list, false)
+	var count = ds_list_size(global.buffer_collision_list);
+	var center = (bbox_top + bbox_bottom) * 0.5;
+    
+    // find nearest
+	var detected = noone;
+	for(var i = 0; i < count; i++)
+	{
+		var other_detected = global.buffer_collision_list[|i];
+		if (!other_detected.grabable) continue;
+		if (detected == noone) detected = other_detected;
+		else if (abs(center - (other_detected.bbox_top + other_detected.bbox_bottom) * 0.5) < abs(center - (detected.bbox_top + detected.bbox_bottom) * 0.5))
+		{
+			detected = other_detected;
+		}
+	}
+	
+	if _debug {
+		draw_rectangle(drx1, dry1, drx2, dry2, true);
+		if detected {
+			draw_rectangle(detected.bbox_left, detected.bbox_top, detected.bbox_right, detected.bbox_bottom, true)
+		}
+	}
+	
+	return detected;
+}
+
+function update_collision_mask() {
+    if (holded) {
+        mask_index = spr_player_collision_hold;
+    }
+    else {
+        mask_index = spr_player_collision;
+    }
+}

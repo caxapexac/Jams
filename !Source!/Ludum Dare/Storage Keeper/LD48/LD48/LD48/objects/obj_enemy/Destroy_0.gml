@@ -1,0 +1,1 @@
+instance_create_layer(x, y, "Regions", obj_fx_enemy_death);

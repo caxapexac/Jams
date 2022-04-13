@@ -1,0 +1,7 @@
+particles_init_param_destructor(100)
+particles_init_param_displacement(0, 100)
+particles_init_param_emitter(0.3)
+particles_init_param_gravity(0.4, -0.4)
+particles_init_param_lifetime(1, 2)
+particles_init_param_scale(0.5, 4.5, 0.5, 1.5)
+particles_init_param_speed(0, 2, 0, 0, 0.5, 4, 0, 0)

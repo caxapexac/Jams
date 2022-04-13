@@ -1,0 +1,1 @@
+global.buffer_collision_list = ds_list_create();
