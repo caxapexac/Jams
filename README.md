@@ -19,6 +19,7 @@
 - [Storage Keeper](https://ldjam.com/events/ludum-dare/48/storage-keeper) (2021, 48, Deeper and deeper) [Play!](https://whiletrue.itch.io/storage-keeper) {Destr}
 - [Don't overturn the world](https://ldjam.com/events/ludum-dare/49/dont-overturn-the-world) (2021, 49, Unstable) [Play!](https://caxap.itch.io/dont-overturn-the-world) {Destr}
 - Didn't finished the game (2022, 50, Delay the inevitable) {Destr}
+- [Signal City](https://ldjam.com/events/ludum-dare/59/signal-city) (2026, 59, Signal) {Cawa, Destr}
 
 ### One Hour Game Jam ([Profile](https://onehourgamejam.com/?page=author&author=cax)) ###
 
